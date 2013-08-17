@@ -1,7 +1,10 @@
 /**
-    BasicBot - The basic working bot, using DCMotorBot library.
-
-    Requires DCMotorBot Library available at http://hardwarefun.com/projects/dc-motor-bot
+	u can download this lib from BETA version https://github.com/THXC/Projects/tree/master/HBridge/HBridge
+	or latest from https://github.com/THXC/Arduino/tree/master/libraries/HBridge
+	and most of the credit goes to MR. Sudar Muthu for delivring a simple lib that u can find on 
+	his web page at http://hardwarefun.com/projects/dc-motor-bot i have simply rewrite this 
+	to match my requirements :)
+	Sincerely T.H.X. and have fun using this lib
 */
 
 /*
