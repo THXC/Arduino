@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "I2C", "I2C.vcxproj", "{A466E9E5-7C6C-4827-8266-F2776FB86B64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A466E9E5-7C6C-4827-8266-F2776FB86B64}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A466E9E5-7C6C-4827-8266-F2776FB86B64}.Debug|Win32.Build.0 = Debug|Win32
+		{A466E9E5-7C6C-4827-8266-F2776FB86B64}.Release|Win32.ActiveCfg = Release|Win32
+		{A466E9E5-7C6C-4827-8266-F2776FB86B64}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

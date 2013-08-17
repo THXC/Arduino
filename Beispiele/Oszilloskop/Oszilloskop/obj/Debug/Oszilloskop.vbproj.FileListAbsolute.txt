@@ -1,0 +1,77 @@
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop\Oszilloskop\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.Form1.resources
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.Resources.resources
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.vbproj.GenerateResource.Cache
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop\Oszilloskop\bin\Debug\Oszilloskop.exe
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop\Oszilloskop\bin\Debug\Oszilloskop.pdb
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop\Oszilloskop\bin\Debug\Oszilloskop.xml
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.exe
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.xml
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.pdb
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.AutoRedraw.resources
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V2\Oszilloskop\obj\Debug\Oszilloskop.exe
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V2\Oszilloskop\obj\Debug\Oszilloskop.xml
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V2\Oszilloskop\obj\Debug\Oszilloskop.pdb
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V2\Oszilloskop\bin\Debug\Oszilloskop.exe
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V2\Oszilloskop\bin\Debug\Oszilloskop.pdb
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V2\Oszilloskop\bin\Debug\Oszilloskop.xml
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V2\Oszilloskop\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V2\Oszilloskop\obj\Debug\Oszilloskop.AutoRedraw.resources
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V2\Oszilloskop\obj\Debug\Oszilloskop.Form1.resources
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V2\Oszilloskop\obj\Debug\Oszilloskop.Resources.resources
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V2\Oszilloskop\obj\Debug\Oszilloskop.vbproj.GenerateResource.Cache
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Oszilloskop\obj\Debug\Oszilloskop.exe
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Oszilloskop\obj\Debug\Oszilloskop.xml
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Oszilloskop\obj\Debug\Oszilloskop.pdb
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Oszilloskop\bin\Debug\Oszilloskop.exe
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Oszilloskop\bin\Debug\Oszilloskop.pdb
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Oszilloskop\bin\Debug\Oszilloskop.xml
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Oszilloskop\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Oszilloskop\obj\Debug\Oszilloskop.AutoRedraw.resources
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Oszilloskop\obj\Debug\Oszilloskop.Form1.resources
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Oszilloskop\obj\Debug\Oszilloskop.Resources.resources
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Oszilloskop\obj\Debug\Oszilloskop.vbproj.GenerateResource.Cache
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Plotter\obj\Debug\Oszilloskop.exe
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Plotter\obj\Debug\Oszilloskop.xml
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Plotter\obj\Debug\Oszilloskop.pdb
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Plotter\bin\Debug\Oszilloskop.exe
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Plotter\bin\Debug\Oszilloskop.pdb
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Plotter\bin\Debug\Oszilloskop.xml
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Plotter\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Plotter\obj\Debug\Oszilloskop.AutoRedraw.resources
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Plotter\obj\Debug\Oszilloskop.Form1.resources
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Plotter\obj\Debug\Oszilloskop.Resources.resources
+C:\Users\Sommer\Desktop\Oszi\Oszilloskop V3\Plotter\obj\Debug\Oszilloskop.vbproj.GenerateResource.Cache
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop\bin\Debug\Oszilloskop.exe
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop\bin\Debug\Oszilloskop.pdb
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop\bin\Debug\Oszilloskop.xml
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\ResolveAssemblyReference.cache
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.AutoRedraw.resources
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.Form1.resources
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.Resources.resources
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.vbproj.GenerateResource.Cache
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.exe
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.xml
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.pdb
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop Bascom\obj\Debug\Oszilloskop.exe
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop Bascom\obj\Debug\Oszilloskop.xml
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop Bascom\obj\Debug\Oszilloskop.pdb
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop Bascom\bin\Debug\Oszilloskop.exe
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop Bascom\bin\Debug\Oszilloskop.pdb
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop Bascom\bin\Debug\Oszilloskop.xml
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop Bascom\obj\Debug\ResolveAssemblyReference.cache
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop Bascom\obj\Debug\Oszilloskop.AutoRedraw.resources
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop Bascom\obj\Debug\Oszilloskop.Form1.resources
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop Bascom\obj\Debug\Oszilloskop.Resources.resources
+E:\--- Projects\Projekte 2009\Bascom Lehrgang\CD Daten\Beispiele\Oszilloskop\Oszilloskop Bascom\obj\Debug\Oszilloskop.vbproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\Mikrocontroller Technik mit Arduino\CD\Beispiele\Oszilloskop\Oszilloskop\bin\Debug\Oszilloskop.exe
+C:\Users\Admin\Desktop\Mikrocontroller Technik mit Arduino\CD\Beispiele\Oszilloskop\Oszilloskop\bin\Debug\Oszilloskop.pdb
+C:\Users\Admin\Desktop\Mikrocontroller Technik mit Arduino\CD\Beispiele\Oszilloskop\Oszilloskop\bin\Debug\Oszilloskop.xml
+C:\Users\Admin\Desktop\Mikrocontroller Technik mit Arduino\CD\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Mikrocontroller Technik mit Arduino\CD\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.AutoRedraw.resources
+C:\Users\Admin\Desktop\Mikrocontroller Technik mit Arduino\CD\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.Form1.resources
+C:\Users\Admin\Desktop\Mikrocontroller Technik mit Arduino\CD\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.Resources.resources
+C:\Users\Admin\Desktop\Mikrocontroller Technik mit Arduino\CD\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.vbproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\Mikrocontroller Technik mit Arduino\CD\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.exe
+C:\Users\Admin\Desktop\Mikrocontroller Technik mit Arduino\CD\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.xml
+C:\Users\Admin\Desktop\Mikrocontroller Technik mit Arduino\CD\Beispiele\Oszilloskop\Oszilloskop\obj\Debug\Oszilloskop.pdb
