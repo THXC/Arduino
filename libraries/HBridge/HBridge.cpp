@@ -21,14 +21,6 @@
 #include "HBridge.h"
 
 /**
- * Constructor
- */
-HBridge::HBridge(int hb_num){
-	//no room for error :)
-}
-
-
-/**
  * Default Constructor
  */
 HBridge::HBridge() {

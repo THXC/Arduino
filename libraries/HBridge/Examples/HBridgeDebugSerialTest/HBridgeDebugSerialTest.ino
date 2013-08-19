@@ -16,8 +16,8 @@
 #include <HBridge.h>
 /*debug and testing sketch*/
 
-HBridge hb1(1);//the nr 1 its for the HBridge PCB number
-HBridge hb2(2);//
+HBridge hb1;  //the nr 1 its for the HBridge PCB number
+HBridge hb2;  //
 
 void setup() {
 
