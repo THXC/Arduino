@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "I2CScaner", "I2CScaner.vcxproj", "{EE4E1C35-3C37-430C-B460-45D7CF47C644}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Debug_POTI", "..\Debug_POTI\Debug_POTI.vcxproj", "{35B9BF55-A094-4674-84BB-280801C87962}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{EE4E1C35-3C37-430C-B460-45D7CF47C644}.Debug|Win32.Build.0 = Debug|Win32
 		{EE4E1C35-3C37-430C-B460-45D7CF47C644}.Release|Win32.ActiveCfg = Release|Win32
 		{EE4E1C35-3C37-430C-B460-45D7CF47C644}.Release|Win32.Build.0 = Release|Win32
+		{35B9BF55-A094-4674-84BB-280801C87962}.Debug|Win32.ActiveCfg = Debug|Win32
+		{35B9BF55-A094-4674-84BB-280801C87962}.Debug|Win32.Build.0 = Debug|Win32
+		{35B9BF55-A094-4674-84BB-280801C87962}.Release|Win32.ActiveCfg = Release|Win32
+		{35B9BF55-A094-4674-84BB-280801C87962}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

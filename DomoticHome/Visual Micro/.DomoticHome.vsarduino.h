@@ -1,8 +1,8 @@
 #ifndef _VSARDUINO_H_
 #define _VSARDUINO_H_
-//Board = Arduino Mega 2560 or Mega ADK
-#define __AVR_ATmega2560__
-#define ARDUINO 104
+//Board = Arduino Uno
+#define __AVR_ATmega328P__
+#define ARDUINO 105
 #define __AVR__
 #define F_CPU 16000000L
 #define __cplusplus
@@ -29,7 +29,7 @@ extern "C" void __cxa_pure_virtual() {;}
 //
 //
 
-#include "C:\Program Files (x86)\Arduino\hardware\arduino\variants\mega\pins_arduino.h" 
+#include "C:\Program Files (x86)\Arduino\hardware\arduino\variants\standard\pins_arduino.h" 
 #include "C:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino\arduino.h"
-#include "C:\Users\THX-Server\Dropbox\Arduino\DomoticHome\DomoticHome.ino"
+#include "C:\Users\THX\Dropbox\Arduino\DomoticHome\DomoticHome.ino"
 #endif

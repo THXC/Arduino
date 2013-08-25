@@ -32,5 +32,5 @@ void scanFunc( byte addr, byte result );
 
 #include "C:\Program Files (x86)\Arduino\hardware\arduino\variants\standard\pins_arduino.h" 
 #include "C:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino\arduino.h"
-#include "C:\Users\THX-Server\Dropbox\Arduino\I2CScaner\I2CScaner.ino"
+#include "C:\Users\THX\Dropbox\Arduino\I2CScaner\I2CScaner.ino"
 #endif

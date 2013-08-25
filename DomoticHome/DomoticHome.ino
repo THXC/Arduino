@@ -1,17 +1,17 @@
 /*DomoticHome by THX
 fore more inffo go to http://domotichome.heroku.com/masters
 */
-
+//ver. 1.01
 
 #include <SPI.h>
 #include <Ethernet.h>
 //#include <mcp9700a.h>
 
 
-byte mac[] = { 0x90, 0xA2, 0xDA, 0x0D, 0x86, 0x3F };
-byte ip[] = { 192 ,168 ,178 ,101 };
-byte gateway[] = { 192 ,168 ,178 ,1 };
-byte subnet[] = { 255 ,255 ,255 ,0 };
+byte mac[] = {0x90, 0xA2, 0xDA, 0x0D, 0x86, 0x3F};
+byte ip[] = {192, 168, 178, 31};
+byte gateway[] = {192, 168, 178, 1};
+byte subnet[] = {255, 255, 255, 0};
 EthernetServer server(8496); 
 
 String readString = String(30);
