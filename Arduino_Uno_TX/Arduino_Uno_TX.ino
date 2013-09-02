@@ -7,11 +7,13 @@ void setup()
 
 void loop()
 {
-	VAL();
+	sendSample(sample);
 }
 
-void VAL()
+void sendSample(int sample)
 {
-	int val = analogRead(A1);
-	Serial.println(val);
+  byte low = sample & 0x1F ; // bottom 5 bits: 000xxxxx
+  byte high = (sample >> 5) | 0xE0 ; // top 5 bits tagged with 111xxxxx
+  Serial.write (high) ;
+  Serial.write (low) ;
 }
