@@ -23,10 +23,10 @@
 /**
  * Default Constructor
  */
-HBridge::HBridge() {
+HBridge::HBridge(int hb_num) {
 	//HBridge(1);
-    setEnablePins(0, 1);
-    setControlPins(2, 3, 4, 5);
+    //setEnablePins(0, 1);
+    //setControlPins(2, 3, 4, 5);
 }
 
 
@@ -69,7 +69,7 @@ void HBridge::motorAON() {
 set A diable OFF
 */
 void HBridge::motorAOFF(){
-	delay(10);
+	delay(2);
 	digitalWrite(mE1, LOW);
 	motorACoast();
 }
@@ -85,7 +85,7 @@ void HBridge::motorBON(){
 set B disable OFF
 */
 void HBridge::motorBOFF(){
-	delay(10);
+	delay(2);
 	digitalWrite(mE2, LOW);
 	motorBCoast();
 }

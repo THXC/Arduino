@@ -5,11 +5,14 @@
  */
 
 #include <Wii.h>
+#include <usbhub.h>
+
 USB Usb;
+USBHub Hub1(&Usb); // Some dongles have a hub inside
 BTD Btd(&Usb); // You have to create the Bluetooth Dongle instance like so
 /* You can create the instance of the class in two ways */
-WII Wii(&Btd); // This will start inquiry which will connect to any Wiimote
-//WII Wii(&Btd,0x00,0x26,0x59,0x48,0xFF,0xFB); // This will connect to the Wiimote with that specific Bluetooth Address
+WII Wii(&Btd,PAIR); // This will start an inquiry and then pair with your Wiimote - you only have to do this once
+//WII Wii(&Btd); // After that you can simply create the instance like so and then press any button on the Wiimote
 
 bool printAngle;
 
@@ -26,7 +29,7 @@ void loop() {
   if(Wii.wiimoteConnected) {
     if(Wii.getButtonClick(HOME)) { // You can use getButtonPress to see if the button is held down
       Serial.print(F("\r\nHOME"));
-      Wii.disconnect(); // If you disconnect you have to reset the Arduino to establish the connection again
+      Wii.disconnect();
     } 
     else {
       if(Wii.getButtonClick(LEFT)) {

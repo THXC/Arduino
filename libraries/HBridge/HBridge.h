@@ -36,7 +36,7 @@ public:
 
     // constructor
     HBridge(); // empty constructor
-    //HBridge(int hb_num); // constructor
+    HBridge(int hb_num); // constructor
 
 	//void HBridge(int hb_num);
     void setEnablePins(byte el, byte e2);
@@ -98,6 +98,7 @@ private:
 	int vala;
 	int valb;
 	int val;
+	int hb_num;
 
     // enable pins
     byte mE1;

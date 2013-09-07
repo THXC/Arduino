@@ -5,7 +5,10 @@
  */
 
 #include <PS3BT.h>
+#include <usbhub.h>
+
 USB Usb;
+USBHub Hub1(&Usb); // Some dongles have a hub inside
 BTD Btd(&Usb); // You have to create the Bluetooth Dongle instance like so
 /* You can create the instance of the class in two ways */
 PS3BT PS3(&Btd); // This will just create the instance
@@ -31,18 +34,22 @@ void loop() {
       Serial.print(PS3.getAnalogHat(LeftHatX));
       Serial.print(F("\tLeftHatY: ")); 
       Serial.print(PS3.getAnalogHat(LeftHatY));
-      Serial.print(F("\tRightHatX: ")); 
-      Serial.print(PS3.getAnalogHat(RightHatX));
-      Serial.print(F("\tRightHatY: ")); 
-      Serial.print(PS3.getAnalogHat(RightHatY));
+      if(!PS3.PS3NavigationConnected) {
+        Serial.print(F("\tRightHatX: ")); 
+        Serial.print(PS3.getAnalogHat(RightHatX));
+        Serial.print(F("\tRightHatY: ")); 
+        Serial.print(PS3.getAnalogHat(RightHatY));
+      }      
     }
 
     //Analog button values can be read from almost all buttons
-    if(PS3.getAnalogButton(L2_ANALOG) > 0 || PS3.getAnalogButton(R2_ANALOG) > 0) {
+    if(PS3.getAnalogButton(L2) || PS3.getAnalogButton(R2)) {
       Serial.print(F("\r\nL2: ")); 
-      Serial.print(PS3.getAnalogButton(L2_ANALOG));
-      Serial.print(F("\tR2: ")); 
-      Serial.print(PS3.getAnalogButton(R2_ANALOG));
+      Serial.print(PS3.getAnalogButton(L2));
+      if(!PS3.PS3NavigationConnected) {
+        Serial.print(F("\tR2: ")); 
+        Serial.print(PS3.getAnalogButton(R2));
+      }
     }
     if(PS3.getButtonClick(PS)) {
       Serial.print(F("\r\nPS"));
@@ -113,9 +120,9 @@ void loop() {
     }
   }
   else if(PS3.PS3MoveConnected) {
-    if(PS3.getAnalogButton(T_ANALOG) > 0) {
+    if(PS3.getAnalogButton(T)) {
       Serial.print(F("\r\nT: ")); 
-      Serial.print(PS3.getAnalogButton(T_ANALOG)); 
+      Serial.print(PS3.getAnalogButton(T)); 
     } 
     if(PS3.getButtonClick(PS)) {
       Serial.print(F("\r\nPS"));

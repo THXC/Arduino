@@ -2,17 +2,19 @@
  Example sketch for the Bluetooth library - developed by Kristian Lauszus
  For more information visit my blog: http://blog.tkjelectronics.dk/ or 
  send me an e-mail:  kristianl@tkjelectronics.com
- */
 
-/* 
- Note: 
+ This example show how one can combine all the difference Bluetooth services in one single code.
+ Note:
  You will need a Arduino Mega 1280/2560 to run this sketch,
- As a normal Arduino (Uno, Duemilanove etc.) doesn't have enough SRAM and FLASH
+ as a normal Arduino (Uno, Duemilanove etc.) doesn't have enough SRAM and FLASH
  */
 
 #include <PS3BT.h>
 #include <SPP.h>
+#include <usbhub.h>
+
 USB Usb;
+USBHub Hub1(&Usb); // Some dongles have a hub inside
 BTD Btd(&Usb); // You have to create the Bluetooth Dongle instance like so
 
 /* You can create the instances of the bluetooth services in two ways */
@@ -22,7 +24,7 @@ PS3BT PS3(&Btd); // This will just create the instance
 //PS3BT PS3(&Btd,0x00,0x15,0x83,0x3D,0x0A,0x57); // This will also store the bluetooth address - this can be obtained from the dongle when running the sketch
 
 boolean firstMessage = true;
-String output; // We will store the data in these string so we doesn't overflow the dongle
+String output = ""; // We will store the data in this string
 
 void setup() {
   Serial.begin(115200); // This wil lprint the debugging from the libraries
@@ -31,9 +33,10 @@ void setup() {
     while(1); //halt
   }
   Serial.print(F("\r\nBluetooth Library Started"));
+  output.reserve(200); // Reserve 200 bytes for the output string
 }
 void loop() {
-  Usb.Task();
+  Usb.Task(); // The SPP data is actually not send until this is called, one could call SerialBT.send() directly as well
 
   if(SerialBT.connected) {
     if(firstMessage) {
@@ -41,7 +44,7 @@ void loop() {
       SerialBT.println(F("Hello from Arduino")); // Send welcome message
     }
     if(Serial.available())
-      SerialBT.print(Serial.read());
+      SerialBT.write(Serial.read());
     if(SerialBT.available())
       Serial.write(SerialBT.read());
   } 
@@ -55,19 +58,23 @@ void loop() {
       output += PS3.getAnalogHat(LeftHatX);
       output += "\tLeftHatY: ";
       output += PS3.getAnalogHat(LeftHatY);
-      output += "\tRightHatX: ";
-      output += PS3.getAnalogHat(RightHatX);
-      output += "\tRightHatY: ";
-      output += PS3.getAnalogHat(RightHatY);
+      if(!PS3.PS3NavigationConnected) {
+        output += "\tRightHatX: ";
+        output += PS3.getAnalogHat(RightHatX);
+        output += "\tRightHatY: ";
+        output += PS3.getAnalogHat(RightHatY);
+      }
     }
     //Analog button values can be read from almost all buttons
-    if(PS3.getAnalogButton(L2_ANALOG) || PS3.getAnalogButton(R2_ANALOG)) {
+    if(PS3.getAnalogButton(L2) || PS3.getAnalogButton(R2)) {
       if(output != "")
         output += "\r\n";
       output += "L2: ";
-      output += PS3.getAnalogButton(L2_ANALOG);
-      output += "\tR2: "; 
-      output += PS3.getAnalogButton(R2_ANALOG);
+      output += PS3.getAnalogButton(L2);
+      if(!PS3.PS3NavigationConnected) {
+        output += "\tR2: ";
+        output += PS3.getAnalogButton(R2);
+      }      
     }
     if(output != "") {      
       Serial.println(output);
@@ -127,8 +134,10 @@ void loop() {
       if(PS3.getButtonClick(R3))
         output += " - R3";               
 
-      if(PS3.getButtonClick(SELECT))
-        output += " - Select";
+      if(PS3.getButtonClick(SELECT)) {
+        output += " - Select - ";
+        output += PS3.getStatusString();
+      }
       if(PS3.getButtonClick(START))
         output += " - Start";  
 
@@ -138,6 +147,7 @@ void loop() {
         if(SerialBT.connected)
           SerialBT.println(string);
       }
-    }             
+    }
+    delay(10);
   }
 }

@@ -13,25 +13,78 @@ Contact information
 Circuits At Home, LTD
 Web      :  http://www.circuitsathome.com
 e-mail   :  support@circuitsathome.com
-*/
+ */
 #if !defined(__MESSAGE_H__)
 #define __MESSAGE_H__
 
+// uncomment to activate
+//#define DEBUG_USB_HOST
+
+
+#ifndef USB_HOST_SERIAL
+#define USB_HOST_SERIAL Serial
+#endif
+
 #include <inttypes.h>
 #include <avr/pgmspace.h>
+
+extern int UsbDEBUGlvl;
+
 #include "printhex.h"
+void E_Notify(char const * msg, int lvl);
+void E_Notify(uint8_t b, int lvl);
+void E_NotifyStr(char const * msg, int lvl);
+void E_Notifyc(char c, int lvl);
 
-void Notify(char const * msg);
-//void Notify(const char* msg);
+#ifdef DEBUG_USB_HOST
+#define Notify E_Notify
+#define NotifyStr E_NotifyStr
+#define Notifyc E_Notifyc
+void NotifyFailGetDevDescr(uint8_t reason);
+void NotifyFailSetDevTblEntry(uint8_t reason);
+void NotifyFailGetConfDescr(uint8_t reason);
+void NotifyFailSetConfDescr(uint8_t reason);
+void NotifyFailGetDevDescr(void);
+void NotifyFailSetDevTblEntry(void);
+void NotifyFailGetConfDescr(void);
+void NotifyFailSetConfDescr(void);
+void NotifyFailUnknownDevice(uint16_t VID, uint16_t PID);
+void NotifyFail(uint8_t rcode);
+#else
+#define Notify(...) ((void)0)
+#define NotifyStr(...) ((void)0)
+#define Notifyc(...) ((void)0)
+#define NotifyFailGetDevDescr(...) ((void)0)
+#define NotifyFailSetDevTblEntry(...) ((void)0)
+#define NotifyFailGetConfDescr(...) ((void)0)
+#define NotifyFailGetDevDescr(...) ((void)0)
+#define NotifyFailSetDevTblEntry(...) ((void)0)
+#define NotifyFailGetConfDescr(...) ((void)0)
+#define NotifyFailSetConfDescr(...) ((void)0)
+#define NotifyFailUnknownDevice(...) ((void)0)
+#define NotifyFail(...) ((void)0)
+#endif
 
-template <class ERROR_TYPE>	
-void ErrorMessage(char const * msg, ERROR_TYPE rcode = 0)
-{
-	Notify(msg);
-	Notify(PSTR(": "));
-	PrintHex<ERROR_TYPE>(rcode);
-	Notify(PSTR("\r\n"));
+template <class ERROR_TYPE>
+void ErrorMessage(uint8_t level, char const * msg, ERROR_TYPE rcode = 0) {
+#ifdef DEBUG_USB_HOST
+        Notify(msg, level);
+        Notify(PSTR(": "), level);
+        D_PrintHex<ERROR_TYPE > (rcode, level);
+        Notify(PSTR("\r\n"), level);
+#endif
 }
 
+template <class ERROR_TYPE>
+void ErrorMessage(char const * msg, ERROR_TYPE rcode = 0) {
+#ifdef DEBUG_USB_HOST
+        Notify(msg, 0x80);
+        Notify(PSTR(": "), 0x80);
+        D_PrintHex<ERROR_TYPE > (rcode, 0x80);
+        Notify(PSTR("\r\n"), 0x80);
+#endif
+}
+
+#include "hexdump.h"
 
 #endif // __MESSAGE_H__
