@@ -247,7 +247,7 @@ PWM
 */
 void HBridge::PWM(int val){
 	analogWrite(mE1, val);
-	analogWrite(mE2, val);
+	analogWrite(mE2, val*2);
 }
 
 /*
