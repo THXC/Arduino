@@ -3,6 +3,7 @@
 //Board = Arduino Mega 2560 or Mega ADK
 #define __AVR_ATmega2560__
 #define 
+#define _VMDEBUG 1
 #define ARDUINO 105
 #define ARDUINO_MAIN
 #define __AVR__
@@ -33,12 +34,6 @@ extern "C" void __cxa_pure_virtual() {;}
 //
 void lightON();
 void lightOFF();
-void Light();
-void Start();
-void UPClick();
-void RIGHTClick();
-void DOWNClick();
-void LEFTClick();
 void motorOneAON();
 void motorOneBON();
 void motorOneAOFF();

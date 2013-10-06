@@ -2,7 +2,7 @@
 	u can download this lib from BETA version https://github.com/THXC/Projects/tree/master/HBridge/HBridge
 	or latest from https://github.com/THXC/Arduino/tree/master/libraries/HBridge
 	and most of the credit goes to MR. Sudar Muthu for delivring a simple lib that u can find on 
-	his web page at http://hardwarefun.com/projects/dc-motor-bot i have simply rewrite this 
+	his web page at http://hardwarefun.com/projects/dc-move-bot i have simply rewrite this 
 	to match my requirements :)
 	Sincerely T.H.X. and have fun using this lib
 */
@@ -61,55 +61,55 @@ void HBridge::setControlPins(byte I1, byte I2, byte I3, byte I4) {
 /*
 set  A enable ON
 */
-void HBridge::motorAON() {
+void HBridge::AON() {
 	digitalWrite(mE1, HIGH);
 }
 
 /*
 set A diable OFF
 */
-void HBridge::motorAOFF(){
+void HBridge::AOFF(){
 	delay(2);
 	digitalWrite(mE1, LOW);
-	motorACoast();
+	moveACoast();
 }
 
 /*
 set B enable ON
 */
-void HBridge::motorBON(){
+void HBridge::BON(){
 	digitalWrite(mE2, HIGH);
 }
 
 /*
 set B disable OFF
 */
-void HBridge::motorBOFF(){
+void HBridge::BOFF(){
 	delay(2);
 	digitalWrite(mE2, LOW);
-	motorBCoast();
+	moveBCoast();
 }
 
 /*
 set AB enable ON
 */
-void HBridge::motorON(){
-	motorAON();
-	motorBON();
+void HBridge::ABON(){
+	moveAON();
+	moveBON();
 }
 
 /*
 set AB disable OFF
 */
-void HBridge::motorOFF(){
-	motorAOFF();
-	motorBOFF();
+void HBridge::ABOFF(){
+	moveAOFF();
+	moveBOFF();
 }
 
 /*
 coast A
 */
-void HBridge::motorACoast(){
+void HBridge::ACoast(){
 	digitalWrite(mI1, LOW);
 	digitalWrite(mI2, LOW);
 }
@@ -117,7 +117,7 @@ void HBridge::motorACoast(){
 /*
 coast B
 */
-void HBridge::motorBCoast(){
+void HBridge::BCoast(){
 	digitalWrite(mI3, LOW);
 	digitalWrite(mI4, LOW);
 }
@@ -125,8 +125,8 @@ void HBridge::motorBCoast(){
 /*
 forward A
 */
-void HBridge::motorAForward(){
-	//motorAON();
+void HBridge::moveAForward(){
+	//moveAON();
 	digitalWrite(mI1, HIGH);
 	digitalWrite(mI2, LOW);
 }
@@ -134,8 +134,8 @@ void HBridge::motorAForward(){
 /*
 forward B
 */
-void HBridge::motorBForward(){
-	//motorBON();
+void HBridge::moveBForward(){
+	//moveBON();
 	digitalWrite(mI3, HIGH);
 	digitalWrite(mI4, LOW);
 }
@@ -143,17 +143,17 @@ void HBridge::motorBForward(){
 /*
 forward AB
 */
-void HBridge::motorForward(){
-	//motorON();
-	motorAForward();
-	motorBForward();
+void HBridge::moveForward(){
+	//moveON();
+	moveAForward();
+	moveBForward();
 }
 
 /*
 backward A
 */
-void HBridge::motorABackward(){
-	//motorAON();
+void HBridge::moveABackward(){
+	//moveAON();
 	digitalWrite(mI1, LOW);
 	digitalWrite(mI2, HIGH);
 }
@@ -161,8 +161,8 @@ void HBridge::motorABackward(){
 /*
 backward B
 */
-void HBridge::motorBBackward(){
-	//motorBON();
+void HBridge::moveBBackward(){
+	//moveBON();
 	digitalWrite(mI3, LOW);
 	digitalWrite(mI4, HIGH);
 }
@@ -170,62 +170,106 @@ void HBridge::motorBBackward(){
 /*
 backward AB
 */
-void HBridge::motorBackward(){
-	//motorON();
-	motorABackward();
-	motorBBackward();
+void HBridge::moveBackward(){
+	//moveON();
+	moveABackward();
+	moveBBackward();
+}
+
+/*
+moveAUP
+*/
+void HBridge::moveAUP(){
+	moveAForward();
+}
+
+/*
+moveADown
+*/
+void HBridge::moveADown(){
+	moveABackward();
+}
+
+/*
+moveBUP
+*/
+void HBridge::moveBUP(){
+	moveBForward();
+}
+
+/*
+moveBDown
+*/
+void HBridge::moveBDown(){
+	moveBBackward();
+}
+
+/*
+moveUP
+*/
+void HBridge::moveUP(){
+	moveAUP();
+	moveBUP();
+}
+
+/*
+moveDown
+*/
+void HBridge::moveDown(){
+	moveADown();
+	moveBDown();
 }
 
 /*
 turn A left
 */
 void HBridge::turnALeft(){
-	motorAForward();
+	moveAForward();
 }
 
 /*
 turn B left
 */
 void HBridge::turnBLeft(){
-	motorBForward();
+	moveBForward();
 }
 
 /*
 turn A Right
 */
 void HBridge::turnARight(){
-	motorABackward();
+	moveABackward();
 }
 
 /*
 turn B Right
 */
 void HBridge::turnBRight(){
-	motorBBackward();
+	moveBBackward();
 }
 
 /*
 turn left
 */
-void HBridge::Left(){
-	motorAForward();
-	motorBBackward();
+void HBridge::ABLeft(){
+	moveAForward();
+	moveBBackward();
 }
 
 /*
 turn right
 */
-void HBridge::Right(){
-	motorABackward();
-	motorBForward();
+void HBridge::ABRight(){
+	moveABackward();
+	moveBForward();
 }
 
 /*
 stop
 */
-void HBridge::Stop(){
-	motorAOFF();
-	motorBOFF();
+void HBridge::ABStop(){
+	moveAOFF();
+	moveBOFF();
 }
 
 /*
@@ -247,35 +291,35 @@ PWM
 */
 void HBridge::PWM(int val){
 	analogWrite(mE1, val);
-	analogWrite(mE2, val*2);
+	analogWrite(mE2, val);
 }
 
 /*
 move PWM A Backward
 */
 void HBridge::movePWMABackward(){
-	motorABackward();
+	moveABackward();
 }
 
 /*
 move PWM B Backward
 */
 void HBridge::movePWMBBackward(){
-	motorBBackward();
+	moveBBackward();
 }
 
 /*
 move PWM A Forward
 */
 void HBridge::movePWMAForward(){
-	motorAForward();
+	moveAForward();
 }
 
 /*
 move PWM B Forward
 */
 void HBridge::movePWMBForward(){
-	motorBForward();
+	moveBForward();
 }
 
 /*
@@ -324,20 +368,20 @@ void HBridge::PWMturnRight(){
 move PWM Forward
 */
 void HBridge::movePWMForward(){
-	motorForward();
+	moveForward();
 }
 
 /*
 move PWM Backward
 */
 void HBridge::movePWMBackward(){
-	motorBackward();
+	moveBackward();
 }
 
 /****************************************************************************************************
 *****************************************************************************************************
 *****************************************************************************************************
-											Version v1.02											
+											Version v1.04									
 *****************************************************************************************************
 *****************************************************************************************************
 *****************************************************************************************************/

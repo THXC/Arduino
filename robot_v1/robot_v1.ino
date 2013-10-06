@@ -113,12 +113,15 @@ void loop()
 	Usb.Task();
 	if(PS3.PS3Connected)
 	{	
+		/*
 		Start();
 		Light();
 		UPClick();
 		RIGHTClick();
 		DOWNClick();
 		LEFTClick();
+		*/
+		MotorOnePWM();
 		
 	}
 }
@@ -145,7 +148,7 @@ void lightOFF()
 }
 
 /*light ON light OFF */
-void Light()
+/*void Light()
 {
 	if(PS3.getButtonClick(SELECT))
 	{
@@ -170,7 +173,7 @@ void Light()
 /*************************************************************************************************************************************************/
 
 /*Start robot move*/
-void Start()
+/*void Start()
 {
 	if(PS3.getButtonClick(START))
 	{
@@ -191,7 +194,7 @@ void Start()
 }
 
 /*Click Up*/
-void UPClick()
+/*void UPClick()
 {
 	if(PS3.getButtonClick(UP))
 	{
@@ -213,7 +216,7 @@ void UPClick()
 }
 
 /*Click Right*/
-void RIGHTClick()
+/*void RIGHTClick()
 {
 	if(PS3.getButtonClick(RIGHT))
 	{
@@ -234,7 +237,7 @@ void RIGHTClick()
 }
 
 /*Click Down*/
-void DOWNClick()
+/*void DOWNClick()
 {
 	if(PS3.getButtonClick(DOWN))
 	{
@@ -251,11 +254,11 @@ void DOWNClick()
 		UPClick();
 		RIGHTClick();
 		LEFTClick();
-	}*/
+	}
 }
 
 /*Click Left*/
-void LEFTClick()
+/*void LEFTClick()
 {
 	if(PS3.getButtonClick(LEFT))
 	{
@@ -272,7 +275,7 @@ void LEFTClick()
 		UPClick();
 		RIGHTClick();
 		DOWNClick();
-	}*/
+	}
 }
 
 /*************************************************************************************************************************************************/
@@ -396,42 +399,42 @@ void motorOFF()
 void MotorOnePWM()
 {
 	/*Go Backward With L2*/
-	if ((PS3.getAnalogButton(L2_ANALOG))&&!(PS3.getAnalogButton(R2_ANALOG))&&!(PS3.getButtonPress(CROSS)))
+	if ((PS3.getAnalogButton(L2))&&!(PS3.getAnalogButton(R2))&&!(PS3.getButtonPress(CROSS)))
 	{
-		analogWrite(One_Enable_A, (PS3.getAnalogButton(L2_ANALOG)));
-		analogWrite(One_Enable_B, (PS3.getAnalogButton(L2_ANALOG)));
+		analogWrite(One_Enable_A, (PS3.getAnalogButton(L2)));
+		analogWrite(One_Enable_B, (PS3.getAnalogButton(L2)));
 		motorOneABackward();
 		motorOneBBackward();
 	}
 
 	/*Go Forward With R2*/
-	if ((PS3.getAnalogButton(R2_ANALOG))&&!(PS3.getAnalogButton(L2_ANALOG))&&!(PS3.getButtonPress(CROSS)))
+	if ((PS3.getAnalogButton(R2))&&!(PS3.getAnalogButton(L2))&&!(PS3.getButtonPress(CROSS)))
 	{
-		analogWrite(One_Enable_A, (PS3.getAnalogButton(R2_ANALOG)));
-		analogWrite(One_Enable_B, (PS3.getAnalogButton(R2_ANALOG)));
+		analogWrite(One_Enable_A, (PS3.getAnalogButton(R2)));
+		analogWrite(One_Enable_B, (PS3.getAnalogButton(R2)));
 		motorOneAForward();
 		motorOneBForward();
 	}
 
 	/*Rotate Conterclockwise L2+X*/
-	if ((PS3.getAnalogButton(L2_ANALOG))&&!(PS3.getAnalogButton(R2_ANALOG))&&(PS3.getButtonPress(CROSS)))
+	if ((PS3.getAnalogButton(L2))&&!(PS3.getAnalogButton(R2))&&(PS3.getButtonPress(CROSS)))
 	{
-		analogWrite(One_Enable_A, (PS3.getAnalogButton(L2_ANALOG)));
-		analogWrite(One_Enable_B, (PS3.getAnalogButton(L2_ANALOG)));
+		analogWrite(One_Enable_A, (PS3.getAnalogButton(L2)));
+		analogWrite(One_Enable_B, (PS3.getAnalogButton(L2)));
 		motorOneAForward();
 		motorOneBBackward();
 	}
 
 	/*Rotate Clockwise R2+X*/
-	if ((PS3.getAnalogButton(R2_ANALOG))&&!(PS3.getAnalogButton(L2_ANALOG))&&(PS3.getButtonPress(CROSS)))
+	if ((PS3.getAnalogButton(R2))&&!(PS3.getAnalogButton(L2))&&(PS3.getButtonPress(CROSS)))
 	{
-		analogWrite(One_Enable_A, (PS3.getAnalogButton(R2_ANALOG)));
-		analogWrite(One_Enable_B, (PS3.getAnalogButton(R2_ANALOG)));
+		analogWrite(One_Enable_A, (PS3.getAnalogButton(R2)));
+		analogWrite(One_Enable_B, (PS3.getAnalogButton(R2)));
 		motorOneABackward();
 		motorOneBForward();
 	}
 	/*Break R2+L2*/
-	if ((PS3.getAnalogButton(R2_ANALOG))&&(PS3.getAnalogButton(L2_ANALOG))&&!(PS3.getButtonPress(CROSS)))
+	if ((PS3.getAnalogButton(R2))&&(PS3.getAnalogButton(L2))&&!(PS3.getButtonPress(CROSS)))
 	{
 		motorON();
 		motorBreak();

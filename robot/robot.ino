@@ -23,7 +23,7 @@ void setup()
 	}
 	Serial.print(F("\r\nPS3 Bluetooth Library Started"));
 
-	hb1.setEnablePins(2,3);
+	hb1.setEnablePins(9,3);
 	hb2.setEnablePins(50,29);
 	hb3.setEnablePins(31,41);
 	hb4.setEnablePins(53,43);

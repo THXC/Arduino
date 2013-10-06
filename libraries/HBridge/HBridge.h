@@ -2,7 +2,7 @@
 	u can download this lib from BETA version https://github.com/THXC/Projects/tree/master/HBridge/HBridge
 	or latest from https://github.com/THXC/Arduino/tree/master/libraries/HBridge
 	and most of the credit goes to MR. Sudar Muthu for delivring a simple lib that u can find on 
-	his web page at http://hardwarefun.com/projects/dc-motor-bot i have simply rewrite this 
+	his web page at http://hardwarefun.com/projects/dc-move-bot i have simply rewrite this 
 	to match my requirements :)
 	Sincerely T.H.X. and have fun using this lib
 */
@@ -43,24 +43,31 @@ public:
     void setControlPins(byte I1, byte I2, byte I3, byte I4);
   
     // movement functions
-    void motorAON();
-	void motorAOFF();
-	void motorBON();
-	void motorBOFF();
-	void motorON();
-	void motorOFF();
+    void AON();
+	void AOFF();
+	void BON();
+	void BOFF();
+	void ABON();
+	void ABOFF();
 
 	//coast
-	void motorACoast();
-	void motorBCoast();
+	void ACoast();
+	void BCoast();
 
 	//move
-	void motorAForward();
-	void motorBForward();
-	void motorForward();
-	void motorABackward();
-	void motorBBackward();
-	void motorBackward();
+	void moveAForward();
+	void moveBForward();
+	void moveForward();
+	void moveABackward();
+	void moveBBackward();
+	void moveBackward();
+	
+	void moveAUP();
+	void moveADown();
+	void moveBUP();
+	void moveBDown();
+	void moveUP();
+	void moveDown();
 
 	//move A left and B right /-/ A right and B left
 	void turnALeft();
@@ -115,7 +122,7 @@ private:
 /****************************************************************************************************
 *****************************************************************************************************
 *****************************************************************************************************
-											Version v1.02										
+											Version v1.04										
 *****************************************************************************************************
 *****************************************************************************************************
 *****************************************************************************************************/
