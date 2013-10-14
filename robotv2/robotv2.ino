@@ -7,8 +7,6 @@ USBHub Hubl(&Usb);
 BTD Btd(&Usb);
 PS3BT PS3(&Btd,0x00, 0x09, 0xDD, 0x50, 0x8F,0xC6);
 
-double timex = 0.1;
-
 
 /*..........................................................................................................................................................*/
 /*..........................................................................................................................................................*/
@@ -78,35 +76,34 @@ void loop()
 void MotorOnePWM()
 {
 	//Go Backward With L2
-	if ((PS3.getAnalogButton(L2))&&!(PS3.getAnalogButton(R2))&&!(PS3.getButtonPress(CROSS)))
+	if ((PS3.getAnalogButton(L2)) &&! (PS3.getAnalogButton(R2)) &&! (PS3.getButtonPress(CROSS)))
 	{
 		hb1.PWM(PS3.getAnalogButton(L2));
 		hb1.movePWMBackward();
 	}
 
 	//Go Forward With R2
-	if ((PS3.getAnalogButton(R2))&&!(PS3.getAnalogButton(L2))&&!(PS3.getButtonPress(CROSS)))
+	if ((PS3.getAnalogButton(R2)) &&! (PS3.getAnalogButton(L2)) &&! (PS3.getButtonPress(CROSS)))
 	{
 		hb1.PWM(PS3.getAnalogButton(R2));
 		hb1.movePWMForward();
 	}
 
 	//Rotate Counterclockwise L2+X
-	if ((PS3.getAnalogButton(L2))&&!(PS3.getAnalogButton(R2))&&(PS3.getButtonPress(CROSS)))
+	if ((PS3.getAnalogButton(L2)) &&! (PS3.getAnalogButton(R2)) && (PS3.getButtonPress(CROSS)))
 	{
 		hb1.PWM(PS3.getAnalogButton(L2));
 		hb1.PWMturnLeft();
 	}
 
 	//Rotate Clockwise R2+X
-	if ((PS3.getAnalogButton(R2))&&!(PS3.getAnalogButton(L2))&&(PS3.getButtonPress(CROSS)))
+	if ((PS3.getAnalogButton(R2)) &&! (PS3.getAnalogButton(L2)) && (PS3.getButtonPress(CROSS)))
 	{
 		hb1.PWM(PS3.getAnalogButton(R2));
 		hb1.PWMturnRight();
 	}
 
 	//Motor OFF
-	delay(timex);
 	hb1.motorStop();
 }
 
@@ -117,20 +114,19 @@ void MotorOnePWM()
 void MotorTwoA()
 {
 	//turn left
-	if((PS3.getButtonPress(L1))&&!(PS3.getButtonPress(R1)))
+	if((PS3.getButtonPress(L1)) &&! (PS3.getButtonPress(R1)))
 	{
 		hb2.motorAON();
 		hb2.turnALeft();
 	}
 	
 	//turn right
-	if ((PS3.getButtonPress(R1))&&!(PS3.getButtonPress(L1)))
+	if ((PS3.getButtonPress(R1)) &&! (PS3.getButtonPress(L1)))
 	{
 		hb2.motorAON();
 		hb2.turnARight();
 	}
 	//Motor 2A OFF
-	delay(timex);
 	hb2.motorAOFF();
 }
 
@@ -155,7 +151,6 @@ void MotorTwoB()
 	}
 	
 	//motor 2B OFF
-	delay(timex);
 	hb2.motorBOFF();
 }
 
@@ -180,7 +175,6 @@ void MotorThreeA()
 	}
 	
 	//motor 3A OFF
-	delay(timex);
 	hb3.motorAOFF();
 }
 
@@ -205,7 +199,6 @@ void MotorThreeB()
 	}
 	
 	//motor 3B OFF
-	delay(timex);
 	hb3.motorBOFF();
 }
 
@@ -230,7 +223,6 @@ void MotorFourA()
 	}
 	
 	//motor 4A OFF
-	delay(timex);
 	hb4.motorAOFF();
 }
 
