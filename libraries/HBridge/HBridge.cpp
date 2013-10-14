@@ -29,6 +29,7 @@ HBridge::HBridge(int hb_num) {
     //setControlPins(2, 3, 4, 5);
 }
 
+/***************************************************************************************************/
 
 /**
  * Set Enable pins
@@ -61,55 +62,57 @@ void HBridge::setControlPins(byte I1, byte I2, byte I3, byte I4) {
 /*
 set  A enable ON
 */
-void HBridge::AON() {
+void HBridge::motorAON() {
 	digitalWrite(mE1, HIGH);
 }
 
 /*
-set A diable OFF
+set A disable OFF
 */
-void HBridge::AOFF(){
-	delay(2);
+void HBridge::motorAOFF(){
+	//delay(1);
 	digitalWrite(mE1, LOW);
-	moveACoast();
+	motorACoast();
 }
 
 /*
 set B enable ON
 */
-void HBridge::BON(){
+void HBridge::motorBON(){
 	digitalWrite(mE2, HIGH);
 }
 
 /*
 set B disable OFF
 */
-void HBridge::BOFF(){
-	delay(2);
+void HBridge::motorBOFF(){
+	//delay(1);
 	digitalWrite(mE2, LOW);
-	moveBCoast();
+	motorBCoast();
 }
 
 /*
 set AB enable ON
 */
-void HBridge::ABON(){
-	moveAON();
-	moveBON();
+void HBridge::motorON(){
+	motorAON();
+	motorBON();
 }
 
 /*
 set AB disable OFF
 */
-void HBridge::ABOFF(){
-	moveAOFF();
-	moveBOFF();
+void HBridge::motorOFF(){
+	motorAOFF();
+	motorBOFF();
 }
+
+/***************************************************************************************************/
 
 /*
 coast A
 */
-void HBridge::ACoast(){
+void HBridge::motorACoast(){
 	digitalWrite(mI1, LOW);
 	digitalWrite(mI2, LOW);
 }
@@ -117,10 +120,12 @@ void HBridge::ACoast(){
 /*
 coast B
 */
-void HBridge::BCoast(){
+void HBridge::motorBCoast(){
 	digitalWrite(mI3, LOW);
 	digitalWrite(mI4, LOW);
 }
+
+/***************************************************************************************************/
 
 /*
 forward A
@@ -176,6 +181,8 @@ void HBridge::moveBackward(){
 	moveBBackward();
 }
 
+/***************************************************************************************************/
+
 /*
 moveAUP
 */
@@ -220,6 +227,8 @@ void HBridge::moveDown(){
 	moveBDown();
 }
 
+/***************************************************************************************************/
+
 /*
 turn A left
 */
@@ -248,10 +257,12 @@ void HBridge::turnBRight(){
 	moveBBackward();
 }
 
+/***************************************************************************************************/
+
 /*
 turn left
 */
-void HBridge::ABLeft(){
+void HBridge::moveLeft(){
 	moveAForward();
 	moveBBackward();
 }
@@ -259,7 +270,7 @@ void HBridge::ABLeft(){
 /*
 turn right
 */
-void HBridge::ABRight(){
+void HBridge::moveRight(){
 	moveABackward();
 	moveBForward();
 }
@@ -267,10 +278,58 @@ void HBridge::ABRight(){
 /*
 stop
 */
-void HBridge::ABStop(){
-	moveAOFF();
-	moveBOFF();
+void HBridge::motorStop(){
+	motorAOFF();
+	motorBOFF();
 }
+
+/***************************************************************************************************/
+
+/*
+A catch 
+*/
+void HBridge::ACatch(){
+	moveAForward();
+}
+
+/*
+A drop
+*/
+void HBridge::ADrop(){
+	moveABackward();
+}
+
+/*
+B Catch
+*/
+void HBridge::BCatch(){
+	moveBForward();
+}
+
+/*
+B Drop
+*/
+void HBridge::BDrop(){
+	moveBBackward();
+}
+
+/*
+AB Catch
+*/
+void HBridge::ABCatch(){
+	ACatch();
+	BCatch();
+}
+
+/*
+AB Drop
+*/
+void HBridge::ABDrop(){
+	ADrop();
+	BDrop();
+}
+
+/***************************************************************************************************/
 
 /*
 PWM A
@@ -293,6 +352,8 @@ void HBridge::PWM(int val){
 	analogWrite(mE1, val);
 	analogWrite(mE2, val);
 }
+
+/***************************************************************************************************/
 
 /*
 move PWM A Backward
@@ -322,6 +383,8 @@ void HBridge::movePWMBForward(){
 	moveBForward();
 }
 
+/***************************************************************************************************/
+
 /*
 move PWM A Left
 */
@@ -350,18 +413,20 @@ void HBridge::movePWMBRight(){
 	turnBRight();
 }
 
+/***************************************************************************************************/
+
 /*
 turn PWM Left
 */
 void HBridge::PWMturnLeft(){
-	Left();
+	moveLeft();
 }
 
 /*
 turn PWM Right
 */
 void HBridge::PWMturnRight(){
-	Right();
+	moveRight();
 }
 
 /*
@@ -381,7 +446,7 @@ void HBridge::movePWMBackward(){
 /****************************************************************************************************
 *****************************************************************************************************
 *****************************************************************************************************
-											Version v1.04									
+											Version v1.07									
 *****************************************************************************************************
 *****************************************************************************************************
 *****************************************************************************************************/

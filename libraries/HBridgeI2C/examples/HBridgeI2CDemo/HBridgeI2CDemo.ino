@@ -12,7 +12,7 @@ pin6 is NC
 pin7 is NC
 and the default address on my pcf8574ap when pins A0, A1, A2 are connected to GND is 0x38
 
-for more movment see the HBridgeI2C.h file
+for more movement see the HBridgeI2C.h file
 
 
 */
