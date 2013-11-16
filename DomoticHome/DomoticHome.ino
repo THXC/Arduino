@@ -9,7 +9,7 @@ fore more inffo go to http://domotichome.heroku.com/masters
 
 
 byte mac[] = {0x90, 0xA2, 0xDA, 0x0D, 0x86, 0x3F};
-byte ip[] = {192, 168, 178, 31};
+byte ip[] = {192, 168, 178, 199};
 byte gateway[] = {192, 168, 178, 1};
 byte subnet[] = {255, 255, 255, 0};
 EthernetServer server(8496); 

@@ -54,12 +54,12 @@ void loop()
 	if(PS3.PS3Connected)
 	{
 		//LedBlink();
-		MotorOnePWM();
-		MotorTwoA();
+		//MotorOnePWM();
+		//MotorTwoA();
 		MotorTwoB();
 		MotorThreeA();
-		MotorThreeB();
-		MotorFourA();
+		//MotorThreeB();
+		//MotorFourA();
 	}
 }
 
@@ -230,10 +230,11 @@ void MotorFourA()
 /*..........................................................................................................................................................*/
 /*..........................................................................................................................................................*/
 /*Led Blink if connected to controller*/
-void LedBlink()
+/*void LedBlink()
 {
 	digitalWrite(22, HIGH);
 	delay(350);
 	digitalWrite(22, LOW);
 	delay(350);
 }
+*/

@@ -70,7 +70,7 @@ void HBridge::motorAON() {
 set A disable OFF
 */
 void HBridge::motorAOFF(){
-	//delay(1);
+	delay(5);
 	digitalWrite(mE1, LOW);
 	motorACoast();
 }
@@ -86,7 +86,7 @@ void HBridge::motorBON(){
 set B disable OFF
 */
 void HBridge::motorBOFF(){
-	//delay(1);
+	delay(5);
 	digitalWrite(mE2, LOW);
 	motorBCoast();
 }
