@@ -220,11 +220,11 @@ void loop()
 						Serial.print("\n OUT ALL\n");
 						client.print("{\"ip\" : \"192.168.178.101\", ");
 						client.print("\"devices\" : ");
-						client.print("[{ \"type\" : \"light\", \"name\" : \"C\", \"out\" : \"");
-						client.print("48");
-						client.print("\"}");
-						client.print(",{ \"type\" : \"light\", \"name\" : \"D\", \"out\" : \"");
+						client.print("[{ \"type\" : \"light\", \"name\" : \"D\", \"out\" : \"");
 						client.print("49");
+						client.print("\"}");
+						client.print(",{ \"type\" : \"light\", \"name\" : \"C\", \"out\" : \"");
+						client.print("48");
 						client.print("\"}");
 						client.print(",{ \"type\" : \"light\", \"name\" : \"B\", \"out\" : \"");
 						client.print("47");
