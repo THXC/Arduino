@@ -1,12 +1,18 @@
+#include <Servo.h>
 
+int pos = 0;
 int PWM = 13;
 
+Servo myservo;
 String readString;
 
 void setup()																//setup
 {
 	pinMode(40, OUTPUT);													//pin set to OUTPUT
 	pinMode(PWM, OUTPUT);
+	
+	myservo.attach(3);	
+	
 	Serial.begin(115200);													//serial port is set to val
 	Serial.println("TEST PROGRAM By THXC");									//print msg on port
 }
@@ -16,11 +22,12 @@ void loop()																	//loop
 	
 	while (Serial.available()) {											//see if serial is available
 		delay(3);															//a few seconds delay
-		char achar = Serial.read();											// convert serial read to achar
-		readString += achar;												// read the string
+		char aChar = Serial.read();											// convert serial read to aChar
+		readString += aChar;												// read the string
 	}
 
-	if (readString.length() >0) {											//and here we be starting
+	if (readString.length() >0) 
+	{																		//and here we be starting
 		Serial.println(readString);
 
 		if (readString.indexOf("40ON") >=0)									//if serial read receives 40ON µC will set this pin to High
@@ -97,7 +104,7 @@ void loop()																	//loop
 			digitalWrite(PWM, LOW);
 			Serial.print("\tPWM OFF\t");
 		}
-
+								
 		readString="";
 	}
 }
