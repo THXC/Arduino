@@ -7,7 +7,7 @@
   interface
 
   Written by Michal Nowaczyk for general purpose u can contact me via 
-  email michalnowaczyk_18@poczta.fm if u have any problems or modify 
+  email cap.price.wow@gmail.com if u have any problems or modify 
   this library 
   BSD license, all text above must be included in any redistribution
   u can find this and other my project on github https://github.com/THXC
