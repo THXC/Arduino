@@ -12,9 +12,9 @@
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <AssemblyName>Arduino_UI_Ethernet</AssemblyName>
-    <Name>Arduino_UI_Ethernet</Name>
-    <RootNamespace>Arduino_UI_Ethernet</RootNamespace>
+    <AssemblyName>Arduino_Ethernet</AssemblyName>
+    <Name>Arduino_Ethernet</Name>
+    <RootNamespace>Arduino_Ethernet</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
@@ -28,15 +28,15 @@
     <BootSegment>0</BootSegment>
     <AsfFrameworkConfig>
       <framework-data>
-        <options />
-        <configurations />
-        <files />
-        <documentation help="" />
-        <offline-documentation help="" />
-        <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.3.0" />
-        </dependencies>
-      </framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.3.0" />
+  </dependencies>
+</framework-data>
     </AsfFrameworkConfig>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -208,7 +208,7 @@
     </VisualMicroSettings>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="Arduino_UI_Ethernet.ino">
+    <None Include="Arduino_Ethernet.ino">
       <SubType>compile</SubType>
     </None>
   </ItemGroup>
@@ -216,7 +216,7 @@
     <Folder Include="Visual Micro\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Visual Micro\.Arduino_UI_Ethernet.vsarduino.h">
+    <Compile Include="Visual Micro\.Arduino_Ethernet.vsarduino.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
