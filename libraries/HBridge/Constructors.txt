@@ -1,0 +1,96 @@
+/*
+    // constructor
+    HBridge(); // empty constructor
+    HBridge(int hb_num); // constructor
+
+	//void HBridge(int hb_num);
+    void setEnablePins(byte el, byte e2);
+    void setControlPins(byte I1, byte I2, byte I3, byte I4);
+	
+	/***************************************************************************************************/
+  
+    // movement functions
+    void motorAON();
+	void motorAOFF();
+	void motorBON();
+	void motorBOFF();
+	void motorON();
+	void motorOFF();
+	
+	/***************************************************************************************************/
+
+	//coast
+	void motorACoast();
+	void motorBCoast();
+	
+	/***************************************************************************************************/
+
+	//move
+	void moveAForward();
+	void moveBForward();
+	void moveForward();
+	void moveABackward();
+	void moveBBackward();
+	void moveBackward();
+	
+	/***************************************************************************************************/
+	
+	void moveAUP();
+	void moveADown();
+	void moveBUP();
+	void moveBDown();
+	void moveUP();
+	void moveDown();
+	
+	/***************************************************************************************************/
+	
+	void ACatch();
+	void ADrop();
+	void BDrop();
+	void BCatch();
+	void ABCatch();
+	void ABDrop();
+	
+	/***************************************************************************************************/
+
+	//move A left and B right /-/ A right and B left
+	void turnALeft();
+	void turnBLeft();
+	void turnARight();
+	void turnBRight();
+	
+	/***************************************************************************************************/
+
+	//move AB left or right
+	void moveLeft();
+	void moveRight();
+	void motorStop();
+	
+	/***************************************************************************************************/
+	
+	//PWM
+	void PWMA(int vala);
+	void PWMB(int valb);
+	void PWM(int val);
+	
+	/***************************************************************************************************/
+
+	void movePWMAForward();
+	void movePWMBForward();
+	void movePWMABackward();
+	void movePWMBBackward();
+	void movePWMForward();
+	void movePWMBackward();
+	
+	/***************************************************************************************************/
+
+	void movePWMALeft();
+	void movePWMARight();
+	void movePWMBLeft();
+	void movePWMBRight();
+	
+	/***************************************************************************************************/
+
+	void PWMturnLeft();
+	void PWMturnRight();
+*/
