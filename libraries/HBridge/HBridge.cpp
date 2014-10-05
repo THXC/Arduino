@@ -23,7 +23,7 @@
 /**
  * Default Constructor
  */
-HBridge::HBridge(int hb_num) {
+/*HBridge::HBridge(int hb_num) {
 	//HBridge(1);
     //setEnablePins(0, 1);
     //setControlPins(2, 3, 4, 5);
@@ -125,13 +125,45 @@ void HBridge::motorBCoast(){
 	digitalWrite(mI4, LOW);
 }
 
+void HBridge::motorCoast(){
+	motorACoast();
+	motorBCoast();
+}
+
 /***************************************************************************************************/
+
+/*
+Stall A
+*/
+void HBridge::motorAStall(){
+	digitalWrite(mI1, HIGH);
+	digitalWrite(mI2, HIGH);
+}
+
+/*
+Stall B
+*/
+void HBridge::motorBStall(){
+	digitalWrite(mI3, HIGH);
+	digitalWrite(mI4, HIGH);
+}
+
+/*
+Stall
+*/
+void HBridge::motorStall(){
+	motorAStall();
+	motorBStall();
+}
+
+/***************************************************************************************************/
+
 
 /*
 forward A
 */
 void HBridge::moveAForward(){
-	//moveAON();
+	//motorAON();
 	digitalWrite(mI1, HIGH);
 	digitalWrite(mI2, LOW);
 }
@@ -140,7 +172,7 @@ void HBridge::moveAForward(){
 forward B
 */
 void HBridge::moveBForward(){
-	//moveBON();
+	//motorBON();
 	digitalWrite(mI3, HIGH);
 	digitalWrite(mI4, LOW);
 }
@@ -149,7 +181,7 @@ void HBridge::moveBForward(){
 forward AB
 */
 void HBridge::moveForward(){
-	//moveON();
+	//motorON();
 	moveAForward();
 	moveBForward();
 }
@@ -158,7 +190,7 @@ void HBridge::moveForward(){
 backward A
 */
 void HBridge::moveABackward(){
-	//moveAON();
+	//motorAON();
 	digitalWrite(mI1, LOW);
 	digitalWrite(mI2, HIGH);
 }
@@ -167,7 +199,7 @@ void HBridge::moveABackward(){
 backward B
 */
 void HBridge::moveBBackward(){
-	//moveBON();
+	//motorBON();
 	digitalWrite(mI3, LOW);
 	digitalWrite(mI4, HIGH);
 }
@@ -176,7 +208,7 @@ void HBridge::moveBBackward(){
 backward AB
 */
 void HBridge::moveBackward(){
-	//moveON();
+	//motorON();
 	moveABackward();
 	moveBBackward();
 }
@@ -446,7 +478,7 @@ void HBridge::movePWMBackward(){
 /****************************************************************************************************
 *****************************************************************************************************
 *****************************************************************************************************
-											Version v1.07									
+											Version v1.09							
 *****************************************************************************************************
 *****************************************************************************************************
 *****************************************************************************************************/

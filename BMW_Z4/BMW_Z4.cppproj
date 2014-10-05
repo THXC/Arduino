@@ -5,16 +5,16 @@
     <ProjectVersion>6.1</ProjectVersion>
     <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
     <ProjectGuid>{07b459b4-8d76-4638-bc6d-a459ba2d616b}</ProjectGuid>
-    <avrdevice>atmega328p</avrdevice>
+    <avrdevice>atmega2560</avrdevice>
     <avrdeviceseries>none</avrdeviceseries>
     <OutputType>Executable</OutputType>
     <Language>CPP</Language>
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <AssemblyName>RGBCubeLED</AssemblyName>
-    <Name>RGBCubeLED</Name>
-    <RootNamespace>RGBCubeLED</RootNamespace>
+    <AssemblyName>BMW_Z4</AssemblyName>
+    <Name>BMW_Z4</Name>
+    <RootNamespace>BMW_Z4</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
@@ -28,20 +28,21 @@
     <BootSegment>0</BootSegment>
     <AsfFrameworkConfig>
       <framework-data>
-        <options />
-        <configurations />
-        <files />
-        <documentation help="" />
-        <offline-documentation help="" />
-        <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.3.0" />
-        </dependencies>
-      </framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.3.0" />
+  </dependencies>
+</framework-data>
     </AsfFrameworkConfig>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
       <AvrGccCpp>
+        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
         <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
         <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
         <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
@@ -50,8 +51,7 @@
         <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
         <avrgcc.compiler.symbols.DefSymbols>
           <ListValues>
-            <Value>__AVR_ATmega328p__</Value>
-            <Value>__AVR_ATmega328P__</Value>
+            <Value>__AVR_ATmega2560__</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=16000000L</Value>
@@ -62,9 +62,11 @@
         <avrgcc.compiler.directories.IncludePaths>
           <ListValues>
             <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino</Value>
-            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\eightanaloginputs</Value>
-            <Value>C:\Users\THX\Dropbox\Arduino\libraries\Rainbowduino</Value>
-            <Value>C:\Users\THX\Dropbox\Arduino\libraries\Rainbowduino\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\HBridge</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\HBridge\utility</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\USBHostShield</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\USBHostShield\utility</Value>
             <Value>C:\Program Files (x86)\Arduino\libraries</Value>
             <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries</Value>
             <Value>C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers</Value>
@@ -85,8 +87,7 @@
         <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
         <avrgcccpp.compiler.symbols.DefSymbols>
           <ListValues>
-            <Value>__AVR_ATmega328p__</Value>
-            <Value>__AVR_ATmega328P__</Value>
+            <Value>__AVR_ATmega2560__</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=16000000L</Value>
@@ -97,9 +98,11 @@
         <avrgcccpp.compiler.directories.IncludePaths>
           <ListValues>
             <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino</Value>
-            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\eightanaloginputs</Value>
-            <Value>C:\Users\THX\Dropbox\Arduino\libraries\Rainbowduino</Value>
-            <Value>C:\Users\THX\Dropbox\Arduino\libraries\Rainbowduino\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\HBridge</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\HBridge\utility</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\USBHostShield</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\USBHostShield\utility</Value>
             <Value>C:\Program Files (x86)\Arduino\libraries</Value>
             <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries</Value>
             <Value>C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers</Value>
@@ -124,41 +127,45 @@
     </ToolchainSettings>
     <VisualMicroSettings>
       <VisualMicroSettings>
-        <arduino.upload.port>COM4</arduino.upload.port>
-        <arduino.board.name>nano_atmega328</arduino.board.name>
-        <arduino.board.desc>Arduino Nano w/ ATmega328</arduino.board.desc>
-        <arduino.board.property_bag>name=Arduino Nano w/ ATmega328
+        <arduino.board.name>mega_atmega2560</arduino.board.name>
+        <arduino.board.desc>Arduino Mega w/ ATmega2560 (Mega 2560)</arduino.board.desc>
+        <arduino.board.property_bag>name=Arduino Mega w/ ATmega2560 (Mega 2560)
+vid.0=0x2341
+pid.0=0x0010
+vid.1=0x2341
+pid.1=0x0042
 upload.tool=avrdude
-upload.protocol=arduino
+upload.maximum_data_size=8192
 bootloader.tool=avrdude
+bootloader.low_fuses=0xFF
 bootloader.unlock_bits=0x3F
 bootloader.lock_bits=0x0F
 build.f_cpu=16000000L
-build.board=AVR_NANO
 build.core=arduino
-build.variant=eightanaloginputs
-menu.cpu.atmega328=ATmega328
-menu.cpu.atmega328.upload.maximum_size=30720
-menu.cpu.atmega328.upload.maximum_data_size=2048
-menu.cpu.atmega328.upload.speed=57600
-menu.cpu.atmega328.bootloader.low_fuses=0xFF
-menu.cpu.atmega328.bootloader.high_fuses=0xDA
-menu.cpu.atmega328.bootloader.extended_fuses=0x05
-menu.cpu.atmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328.hex
-menu.cpu.atmega328.build.mcu=atmega328p
-menu.cpu.atmega168=ATmega168
-menu.cpu.atmega168.upload.maximum_size=14336
-menu.cpu.atmega168.upload.maximum_data_size=1024
-menu.cpu.atmega168.upload.speed=19200
-menu.cpu.atmega168.bootloader.low_fuses=0xff
-menu.cpu.atmega168.bootloader.high_fuses=0xdd
-menu.cpu.atmega168.bootloader.extended_fuses=0x00
-menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_diecimila.hex
-menu.cpu.atmega168.build.mcu=atmega168
+build.variant=mega
+build.board=AVR_MEGA2560
+menu.cpu.atmega2560=ATmega2560 (Mega 2560)
+menu.cpu.atmega2560.upload.protocol=wiring
+menu.cpu.atmega2560.upload.maximum_size=258048
+menu.cpu.atmega2560.upload.speed=115200
+menu.cpu.atmega2560.bootloader.high_fuses=0xD8
+menu.cpu.atmega2560.bootloader.extended_fuses=0xFD
+menu.cpu.atmega2560.bootloader.file=stk500v2/stk500boot_v2_mega2560.hex
+menu.cpu.atmega2560.build.mcu=atmega2560
+menu.cpu.atmega2560.build.board=AVR_MEGA2560
+menu.cpu.atmega1280=ATmega1280
+menu.cpu.atmega1280.upload.protocol=arduino
+menu.cpu.atmega1280.upload.maximum_size=126976
+menu.cpu.atmega1280.upload.speed=57600
+menu.cpu.atmega1280.bootloader.high_fuses=0xDA
+menu.cpu.atmega1280.bootloader.extended_fuses=0xF5
+menu.cpu.atmega1280.bootloader.file=atmega/ATmegaBOOT_168_atmega1280.hex
+menu.cpu.atmega1280.build.mcu=atmega1280
+menu.cpu.atmega1280.build.board=AVR_MEGA
 runtime.ide.path=C:\Program Files (x86)\Arduino
 build.system.path=C:\Program Files (x86)\Arduino\hardware\arduino\avr\system
 runtime.ide.version=156
-originalid=nano
+originalid=mega
 tools.atprogram.cmd.path=%AVRSTUDIO_EXE_PATH%\atbackend\atprogram
 tools.atprogram.cmd.setwinpath=true
 tools.atprogram.program.params.verbose=-v
@@ -212,14 +219,13 @@ tools.avrdude.bootloader.pattern="{cmd.path}" "-C{config.path}" {bootloader.verb
 build.usb_manufacturer=
 build.usb_flags=-DUSB_VID={build.vid} -DUSB_PID={build.pid} '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'
 vm.platform.root.path=C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\arduino15x
-upload.maximum_size=30720
-upload.maximum_data_size=2048
-upload.speed=57600
-bootloader.low_fuses=0xFF
-bootloader.high_fuses=0xDA
-bootloader.extended_fuses=0x05
-bootloader.file=atmega/ATmegaBOOT_168_atmega328.hex
-build.mcu=atmega328p
+upload.protocol=wiring
+upload.maximum_size=258048
+upload.speed=115200
+bootloader.high_fuses=0xD8
+bootloader.extended_fuses=0xFD
+bootloader.file=stk500v2/stk500boot_v2_mega2560.hex
+build.mcu=atmega2560
 vm.core.include=arduino.h
 ide.hint=Arduino 1.5 Ide
 ide.location.key=Arduino15x
@@ -253,21 +259,23 @@ vm.boardsource.path=C:\Program Files (x86)\Arduino\hardware\arduino\avr
 vm.platformname.name=avr
 build.arch=AVR
 </arduino.board.property_bag>
-        <arduino.build.mcu>atmega328p</arduino.build.mcu>
+        <arduino.build.mcu>atmega2560</arduino.build.mcu>
         <arduino.build.f_cpu>16000000L</arduino.build.f_cpu>
         <arduino.build.core>arduino</arduino.build.core>
-        <arduino.upload.protocol>arduino</arduino.upload.protocol>
-        <arduino.upload.speed>57600</arduino.upload.speed>
-        <arduino.upload.maximum_size>30720</arduino.upload.maximum_size>
+        <arduino.upload.protocol>wiring</arduino.upload.protocol>
+        <arduino.upload.speed>115200</arduino.upload.speed>
+        <arduino.upload.maximum_size>258048</arduino.upload.maximum_size>
         <visualmicro.application.name>arduino15x</visualmicro.application.name>
         <visualmicro.package.name>arduino</visualmicro.package.name>
         <visualmicro.platform.name>avr</visualmicro.platform.name>
+        <arduino.upload.port>COM5</arduino.upload.port>
       </VisualMicroSettings>
     </VisualMicroSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <AvrGccCpp>
+        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
         <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
         <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
         <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
@@ -276,8 +284,7 @@ build.arch=AVR
         <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
         <avrgcc.compiler.symbols.DefSymbols>
           <ListValues>
-            <Value>__AVR_ATmega328p__</Value>
-            <Value>__AVR_ATmega328P__</Value>
+            <Value>__AVR_ATmega2560__</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=16000000L</Value>
@@ -288,9 +295,11 @@ build.arch=AVR
         <avrgcc.compiler.directories.IncludePaths>
           <ListValues>
             <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino</Value>
-            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\eightanaloginputs</Value>
-            <Value>C:\Users\THX\Dropbox\Arduino\libraries\Rainbowduino</Value>
-            <Value>C:\Users\THX\Dropbox\Arduino\libraries\Rainbowduino\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\HBridge</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\HBridge\utility</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\USBHostShield</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\USBHostShield\utility</Value>
             <Value>C:\Program Files (x86)\Arduino\libraries</Value>
             <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries</Value>
             <Value>C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers</Value>
@@ -311,8 +320,7 @@ build.arch=AVR
         <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
         <avrgcccpp.compiler.symbols.DefSymbols>
           <ListValues>
-            <Value>__AVR_ATmega328p__</Value>
-            <Value>__AVR_ATmega328P__</Value>
+            <Value>__AVR_ATmega2560__</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=16000000L</Value>
@@ -323,9 +331,11 @@ build.arch=AVR
         <avrgcccpp.compiler.directories.IncludePaths>
           <ListValues>
             <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino</Value>
-            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\eightanaloginputs</Value>
-            <Value>C:\Users\THX\Dropbox\Arduino\libraries\Rainbowduino</Value>
-            <Value>C:\Users\THX\Dropbox\Arduino\libraries\Rainbowduino\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\HBridge</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\HBridge\utility</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\USBHostShield</Value>
+            <Value>C:\Users\THX\Dropbox\Arduino\libraries\USBHostShield\utility</Value>
             <Value>C:\Program Files (x86)\Arduino\libraries</Value>
             <Value>C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries</Value>
             <Value>C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers</Value>
@@ -350,41 +360,45 @@ build.arch=AVR
     </ToolchainSettings>
     <VisualMicroSettings>
       <VisualMicroSettings>
-        <arduino.upload.port>COM4</arduino.upload.port>
-        <arduino.board.name>nano_atmega328</arduino.board.name>
-        <arduino.board.desc>Arduino Nano w/ ATmega328</arduino.board.desc>
-        <arduino.board.property_bag>name=Arduino Nano w/ ATmega328
+        <arduino.board.name>mega_atmega2560</arduino.board.name>
+        <arduino.board.desc>Arduino Mega w/ ATmega2560 (Mega 2560)</arduino.board.desc>
+        <arduino.board.property_bag>name=Arduino Mega w/ ATmega2560 (Mega 2560)
+vid.0=0x2341
+pid.0=0x0010
+vid.1=0x2341
+pid.1=0x0042
 upload.tool=avrdude
-upload.protocol=arduino
+upload.maximum_data_size=8192
 bootloader.tool=avrdude
+bootloader.low_fuses=0xFF
 bootloader.unlock_bits=0x3F
 bootloader.lock_bits=0x0F
 build.f_cpu=16000000L
-build.board=AVR_NANO
 build.core=arduino
-build.variant=eightanaloginputs
-menu.cpu.atmega328=ATmega328
-menu.cpu.atmega328.upload.maximum_size=30720
-menu.cpu.atmega328.upload.maximum_data_size=2048
-menu.cpu.atmega328.upload.speed=57600
-menu.cpu.atmega328.bootloader.low_fuses=0xFF
-menu.cpu.atmega328.bootloader.high_fuses=0xDA
-menu.cpu.atmega328.bootloader.extended_fuses=0x05
-menu.cpu.atmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328.hex
-menu.cpu.atmega328.build.mcu=atmega328p
-menu.cpu.atmega168=ATmega168
-menu.cpu.atmega168.upload.maximum_size=14336
-menu.cpu.atmega168.upload.maximum_data_size=1024
-menu.cpu.atmega168.upload.speed=19200
-menu.cpu.atmega168.bootloader.low_fuses=0xff
-menu.cpu.atmega168.bootloader.high_fuses=0xdd
-menu.cpu.atmega168.bootloader.extended_fuses=0x00
-menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_diecimila.hex
-menu.cpu.atmega168.build.mcu=atmega168
+build.variant=mega
+build.board=AVR_MEGA2560
+menu.cpu.atmega2560=ATmega2560 (Mega 2560)
+menu.cpu.atmega2560.upload.protocol=wiring
+menu.cpu.atmega2560.upload.maximum_size=258048
+menu.cpu.atmega2560.upload.speed=115200
+menu.cpu.atmega2560.bootloader.high_fuses=0xD8
+menu.cpu.atmega2560.bootloader.extended_fuses=0xFD
+menu.cpu.atmega2560.bootloader.file=stk500v2/stk500boot_v2_mega2560.hex
+menu.cpu.atmega2560.build.mcu=atmega2560
+menu.cpu.atmega2560.build.board=AVR_MEGA2560
+menu.cpu.atmega1280=ATmega1280
+menu.cpu.atmega1280.upload.protocol=arduino
+menu.cpu.atmega1280.upload.maximum_size=126976
+menu.cpu.atmega1280.upload.speed=57600
+menu.cpu.atmega1280.bootloader.high_fuses=0xDA
+menu.cpu.atmega1280.bootloader.extended_fuses=0xF5
+menu.cpu.atmega1280.bootloader.file=atmega/ATmegaBOOT_168_atmega1280.hex
+menu.cpu.atmega1280.build.mcu=atmega1280
+menu.cpu.atmega1280.build.board=AVR_MEGA
 runtime.ide.path=C:\Program Files (x86)\Arduino
 build.system.path=C:\Program Files (x86)\Arduino\hardware\arduino\avr\system
 runtime.ide.version=156
-originalid=nano
+originalid=mega
 tools.atprogram.cmd.path=%AVRSTUDIO_EXE_PATH%\atbackend\atprogram
 tools.atprogram.cmd.setwinpath=true
 tools.atprogram.program.params.verbose=-v
@@ -438,14 +452,13 @@ tools.avrdude.bootloader.pattern="{cmd.path}" "-C{config.path}" {bootloader.verb
 build.usb_manufacturer=
 build.usb_flags=-DUSB_VID={build.vid} -DUSB_PID={build.pid} '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'
 vm.platform.root.path=C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\arduino15x
-upload.maximum_size=30720
-upload.maximum_data_size=2048
-upload.speed=57600
-bootloader.low_fuses=0xFF
-bootloader.high_fuses=0xDA
-bootloader.extended_fuses=0x05
-bootloader.file=atmega/ATmegaBOOT_168_atmega328.hex
-build.mcu=atmega328p
+upload.protocol=wiring
+upload.maximum_size=258048
+upload.speed=115200
+bootloader.high_fuses=0xD8
+bootloader.extended_fuses=0xFD
+bootloader.file=stk500v2/stk500boot_v2_mega2560.hex
+build.mcu=atmega2560
 vm.core.include=arduino.h
 ide.hint=Arduino 1.5 Ide
 ide.location.key=Arduino15x
@@ -479,20 +492,21 @@ vm.boardsource.path=C:\Program Files (x86)\Arduino\hardware\arduino\avr
 vm.platformname.name=avr
 build.arch=AVR
 </arduino.board.property_bag>
-        <arduino.build.mcu>atmega328p</arduino.build.mcu>
+        <arduino.build.mcu>atmega2560</arduino.build.mcu>
         <arduino.build.f_cpu>16000000L</arduino.build.f_cpu>
         <arduino.build.core>arduino</arduino.build.core>
-        <arduino.upload.protocol>arduino</arduino.upload.protocol>
-        <arduino.upload.speed>57600</arduino.upload.speed>
-        <arduino.upload.maximum_size>30720</arduino.upload.maximum_size>
+        <arduino.upload.protocol>wiring</arduino.upload.protocol>
+        <arduino.upload.speed>115200</arduino.upload.speed>
+        <arduino.upload.maximum_size>258048</arduino.upload.maximum_size>
         <visualmicro.application.name>arduino15x</visualmicro.application.name>
         <visualmicro.package.name>arduino</visualmicro.package.name>
         <visualmicro.platform.name>avr</visualmicro.platform.name>
+        <arduino.upload.port>COM5</arduino.upload.port>
       </VisualMicroSettings>
     </VisualMicroSettings>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="RGBCubeLED.ino">
+    <None Include="BMW_Z4.ino">
       <SubType>compile</SubType>
     </None>
   </ItemGroup>
@@ -500,7 +514,7 @@ build.arch=AVR
     <Folder Include="Visual Micro\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Visual Micro\.RGBCubeLED.vsarduino.h">
+    <Compile Include="Visual Micro\.BMW_Z4.vsarduino.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

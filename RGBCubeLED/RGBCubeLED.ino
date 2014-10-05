@@ -11,20 +11,21 @@ void setup()
 
 void loop()
 {
-	Layer2();
-	Layer21();
-	Layer22();
+	//Layer2();
+	//Layer21();
+	//Layer22();
 	
-	Layer1();
-	Layer11();
-	Layer12();
+	//Layer1();
+	//Layer11();
+	//Layer12();
+	
 	Layer13();
 	
 }
 
 void Layer1()//zielone
 {
-	delay(700);
+	delay(500);
 	Rb.clearDisplay();
 	for(y=0;y<4;y++)
 	{
@@ -37,7 +38,7 @@ void Layer1()//zielone
 
 void Layer11()
 {
-	//delay(1000);
+	delay(100);
 	//Rb.blankDisplay();
 	for(x=1;x<3;x++)
 	{
@@ -59,17 +60,17 @@ void Layer12()
 	}
 }
 
-void Layer13()//
+void Layer13()//jadro
 {
-	delay(700);
-	Rb.blankDisplay();
+	delay(500);
+	//Rb.blankDisplay();
 	for(z=1;z<3;z++)
 	{
 		for(x=1;x<3;x++)
 		{
 			for(y=1;y<3;y++)
 			{
-				Rb.setPixelZXY(z,x,y,0x00FF00);
+				Rb.setPixelZXY(z,x,y,0xFF0000);
 			}
 		}
 	}
@@ -77,7 +78,7 @@ void Layer13()//
 
 void Layer2()//niebieskie
 {
-	//delay(100);
+	//delay(1000);
 	//Rb.blankDisplay();
 	for(x=1;x<3;x++)
 	{
@@ -91,7 +92,7 @@ void Layer2()//niebieskie
 
 void Layer21()
 {
-	//delay(100);
+	//delay(1000);
 	//Rb.clearDisplay();
 	for(z=1;z<3;z++)
 	{
